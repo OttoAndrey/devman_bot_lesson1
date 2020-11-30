@@ -9,7 +9,7 @@ def main():
     load_dotenv()
 
     tg_bot_token = os.getenv('TG_BOT_TOKEN')
-    chat_id = os.getenv('CHAT_ID')
+    chat_id = os.getenv('VK_CHAT_ID')
     dvmn_token = os.getenv('DVMN_TOKEN')
 
     bot = telegram.Bot(token=tg_bot_token)

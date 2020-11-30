@@ -31,7 +31,7 @@
 Необходимые переменные:
 - `DVMN_TOKEN` - ваш персональный токен в [Devman](https://dvmn.org/api/docs/)
 - `TG_BOT_TOKEN` - токен вашего бота. Узнать можно у [@botfather](https://telegram.me/botfather)
-- `CHAT_ID` - ваш chat_id куда бот будет отсылать вам сообщения.
+- `VK_CHAT_ID` - ваш chat_id куда бот будет отсылать вам сообщения.
 Узнать можно с помощью бота [@userinfobot](https://telegram.me/userinfobot)
 
 
