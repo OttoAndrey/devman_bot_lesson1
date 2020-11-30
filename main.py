@@ -1,4 +1,5 @@
 import os
+from textwrap import dedent
 
 import requests
 import telegram
@@ -29,10 +30,14 @@ def main():
                 else:
                     answer = 'Всё ок, можно приступать к след. уроку!'
 
-                text = f'У вас проверили работу "{attempt["lesson_title"]}".' \
-                       f'\n\n{answer}' \
-                       f'\n\nhttps://dvmn.org{attempt["lesson_url"]}'
-                bot.send_message(chat_id=chat_id, text=text)
+                text = f'''\
+                У вас проверили работу "{attempt["lesson_title"]}".
+
+                {answer} 
+
+                https://dvmn.org{attempt["lesson_url"]}'''
+
+                bot.send_message(chat_id=chat_id, text=dedent(text))
                 params = {'timestamp': response_data['last_attempt_timestamp']}
 
             elif response_data['status'] == 'timeout':
