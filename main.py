@@ -23,15 +23,15 @@ def main():
             response_data = response.json()
 
             if response_data['status'] == 'found':
-                attempts = response_data['new_attempts'][0]
-                if attempts['is_negative']:
+                attempt = response_data['new_attempts'][0]
+                if attempt['is_negative']:
                     answer = 'К сожалению, в работе нашлись ошибки :('
                 else:
                     answer = 'Всё ок, можно приступать к след. уроку!'
 
-                text = f'У вас проверили работу "{attempts["lesson_title"]}".' \
+                text = f'У вас проверили работу "{attempt["lesson_title"]}".' \
                        f'\n\n{answer}' \
-                       f'\n\nhttps://dvmn.org{attempts["lesson_url"]}'
+                       f'\n\nhttps://dvmn.org{attempt["lesson_url"]}'
                 bot.send_message(chat_id=chat_id, text=text)
                 params = {'timestamp': response_data['last_attempt_timestamp']}
 
